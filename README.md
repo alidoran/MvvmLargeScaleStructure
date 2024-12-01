@@ -1,4 +1,5 @@
-For large or Scalable Apps, use the hybrid approach
+For large or Scalable Apps, use the hybrid approach.
+Check the structure on readme file in code view
 
 ────────────────────────────────────────────────────────────────────────────────────────────────────
 Chart:
