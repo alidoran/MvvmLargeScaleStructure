@@ -11,7 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import ir.dorantech.feature1.ui.screen.UserScreen
 import ir.dorantech.mvvmlarge.ui.navigation.RouteApp
 import ir.dorantech.mvvmlarge.ui.screen.MainScreen
-import ir.dorantech.mvvmlarge.ui.theme.MvvmLargeScaleStructureTheme
+import ir.dorantech.ui.theme.MvvmLargeScaleStructureTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

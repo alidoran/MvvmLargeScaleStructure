@@ -9,7 +9,6 @@ MvvmLargeScaleStructure
 │   │   ├── screen                 // App-wide screens (e.g., SplashScreen, OnboardingScreen)
 │   │   ├── component              // Reusable app-wide components (e.g., AppBar, LoadingIndicator)
 │   │   ├── navigation             // App-level navigation setup (e.g., root navigation graph)
-│   │   ├── theme                  // App-wide themes, colors, typography
 │   │   └── state                  // App-level state
 │   ├── MyApp.kt                   // Application class (@HiltAndroidApp)
 │
@@ -34,6 +33,8 @@ MvvmLargeScaleStructure
 │   │   └── usecase                // Shared use cases (e.g., AuthenticateUserUseCase)
 │   │
 │   └── **ui**                     // Base UI
+│   │   ├── state                  // Shared UIs states
+│   │   └── theme                  // Themes, colors, typography
 │
 ├── **foundation**                 // :foundation module (shared logic and utilities)
 │   ├── utils                      // Shared utility classes (e.g., extensions, constants)
