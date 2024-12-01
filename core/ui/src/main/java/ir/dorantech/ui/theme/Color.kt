@@ -1,4 +1,4 @@
-package ir.dorantech.mvvmlarge.ui.theme
+package ir.dorantech.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
