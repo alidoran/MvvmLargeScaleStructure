@@ -21,7 +21,7 @@ fun MainScreen(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Button(onClick = onClickRetrofit) { Text(text = "Retrofit") }
+            Button(onClick = onClickRetrofit) { Text(text = "Retrofit & Room") }
         }
     }
 }

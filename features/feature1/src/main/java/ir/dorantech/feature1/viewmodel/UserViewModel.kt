@@ -4,6 +4,7 @@ import androidx.core.text.isDigitsOnly
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import ir.dorantech.domain.model.DataSource
 import ir.dorantech.domain.model.User
 import ir.dorantech.domain.result.DomainError
 import ir.dorantech.domain.result.DomainResult
@@ -21,18 +22,20 @@ class UserViewModel @Inject constructor(
     private val _userState = MutableStateFlow<UIState<User>>(UIState.Idle)
     val userState: StateFlow<UIState<User>> get() = _userState
 
-    fun fetchUser(userId: String) {
+    fun fetchUser(
+        userId: String,
+        dataSource: DataSource,
+    ) {
         if (userId.isDigitsOnly()) {
             _userState.value = UIState.Loading
             viewModelScope.launch {
-                val result = getUserUseCase(userId)
+                val result = getUserUseCase(userId, dataSource)
                 _userState.value = when (result) {
                     is DomainResult.Failure -> UIState.Error(errorHandler(result))
                     is DomainResult.Success -> UIState.Success(result.data)
                 }
             }
         } else _userState.value = UIState.Error("Invalid Input")
-
     }
 
     private fun errorHandler(dataError: DomainResult.Failure) =

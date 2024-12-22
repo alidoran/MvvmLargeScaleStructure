@@ -38,6 +38,7 @@ dependencies {
     implementation(project(":core:data:mapper"))
     implementation(project(":core:data:remote"))
     implementation(project(":core:domain"))
+    implementation(project(":core:data:local"))
 
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)

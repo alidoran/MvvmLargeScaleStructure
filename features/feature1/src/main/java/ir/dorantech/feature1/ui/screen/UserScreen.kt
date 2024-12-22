@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import ir.dorantech.domain.model.DataSource
 import ir.dorantech.domain.model.User
 import ir.dorantech.ui.state.UIState
 import ir.dorantech.feature1.viewmodel.UserViewModel
@@ -28,9 +29,7 @@ fun UserScreen(
     val userState by viewModel.userState.collectAsState()
 
     UserScreenContent(
-        onFetchUser = { userId ->
-            viewModel.fetchUser(userId)
-        },
+        onFetchUser = { userId, dataSource -> viewModel.fetchUser(userId, dataSource) },
         userState,
         modifier,
     )
@@ -38,7 +37,7 @@ fun UserScreen(
 
 @Composable
 fun UserScreenContent(
-    onFetchUser: (String) -> Unit,
+    onFetchUser: (String, DataSource) -> Unit,
     userState: UIState<User>,
     modifier: Modifier = Modifier
 ) {
@@ -56,10 +55,24 @@ fun UserScreenContent(
             })
         Button(
             onClick = {
-                onFetchUser(userId)
+                onFetchUser(userId, DataSource.Combination)
             }
         ) {
-            Text("Fetch User")
+            Text("Fetch user combination")
+        }
+        Button(
+            onClick = {
+                onFetchUser(userId, DataSource.Local)
+            }
+        ) {
+            Text("Fetch user locally")
+        }
+        Button(
+            onClick = {
+                onFetchUser(userId, DataSource.Remote)
+            }
+        ) {
+            Text("Fetch user remotely")
         }
     }
 
@@ -86,7 +99,7 @@ fun UserScreenPreviewContent(
 ) {
     UserScreenContent(
         userState = userState,
-        onFetchUser = {},
+        onFetchUser = { _, _ -> },
         modifier = modifier
     )
 }

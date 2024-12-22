@@ -51,6 +51,7 @@ dependencies {
     api(libs.material)
     api(platform(libs.androidx.compose.bom))
 
+
     androidTestApi(libs.androidx.espresso.core)
     androidTestApi(libs.androidx.junit)
     androidTestApi(libs.androidx.ui.test.junit4)

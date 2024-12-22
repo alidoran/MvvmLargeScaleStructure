@@ -6,6 +6,4 @@ data class UserDto(
     val email: String
 )
 
-data class UserRequest(
-    val id: String
-)
+data class UserRequest(val id: String)

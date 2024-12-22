@@ -36,6 +36,7 @@ android {
 
 dependencies {
     implementation(project(":core:data:remote"))
+    implementation(project(":core:data:local"))
     implementation(project(":core:data:repository"))
     implementation(project(":core:domain"))
 

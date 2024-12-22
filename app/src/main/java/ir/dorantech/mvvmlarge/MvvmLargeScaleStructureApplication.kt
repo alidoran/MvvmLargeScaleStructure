@@ -4,4 +4,8 @@ import androidx.multidex.MultiDexApplication
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class MvvmLargeScaleStructureApplication : MultiDexApplication()
+class MvvmLargeScaleStructureApplication : MultiDexApplication(){
+    override fun onCreate() {
+        super.onCreate()
+    }
+}
