@@ -1,8 +1,6 @@
 For large or Scalable Apps, use the hybrid approach.
-Check the structure on readme file in code view
-
-────────────────────────────────────────────────────────────────────────────────────────────────────
-Chart:
+Hilt, Retrofit, and Room are implemented.
+```
 MvvmLargeScaleStructure
 ├── **app**                        // :app module (entry point)
 │   ├── ui                         // Global UI components and navigation
@@ -68,3 +66,4 @@ MvvmLargeScaleStructure
 │   └── NetworkModule              // Network setup (optional, if you want to separate network DI further)
 │
 └── build.gradle                   // Root Gradle file
+```
