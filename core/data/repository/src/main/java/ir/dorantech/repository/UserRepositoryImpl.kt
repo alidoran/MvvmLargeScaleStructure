@@ -8,12 +8,12 @@ import ir.dorantech.local.dao.UserDao
 import ir.dorantech.mapper.toDomainModel
 import ir.dorantech.mapper.toEntity
 import ir.dorantech.domain.model.DataSource
-import ir.dorantech.remote.api.UserService
+import ir.dorantech.remote.api.UserDataSource
 import ir.dorantech.remote.dto.UserRequest
 import javax.inject.Inject
 
 class UserRepositoryImpl @Inject constructor(
-    private val userService: UserService,
+    private val userDataSource: UserDataSource,
     private val userDao: UserDao
 ) : UserRepository {
 
@@ -47,7 +47,7 @@ class UserRepositoryImpl @Inject constructor(
         isCombination: Boolean,
     ): DataResult<User> {
         return try {
-            val response = userService.getUser(UserRequest(userId))
+            val response = userDataSource.getUser(UserRequest(userId))
             if (response.isSuccessful) {
                 val userDto = response.body()
                 userDto?.let {

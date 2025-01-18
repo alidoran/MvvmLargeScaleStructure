@@ -8,7 +8,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import ir.dorantech.local.dao.UserDao
 import ir.dorantech.local.database.MvvmLargeScaleDataBase
-import ir.dorantech.remote.api.UserService
+import ir.dorantech.remote.api.UserDataSource
 import ir.dorantech.remote.network.RetrofitBuilder
 import javax.inject.Singleton
 
@@ -23,8 +23,8 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideUserService(): UserService {
-        return RetrofitBuilder.createService(UserService::class.java)
+    fun provideUserService(): UserDataSource {
+        return RetrofitBuilder.createService(UserDataSource::class.java)
     }
 
     @Provides
